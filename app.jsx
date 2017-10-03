@@ -101,12 +101,8 @@ const App = ({ title, model }) => {
       </div>
     );
   }
-
-
   const getPlayersList = () => {
-
     return model.players.map((player, index) => {
-      //console.log(index);
       return (
         <li key={index}>
           <div className="player">
@@ -118,14 +114,11 @@ const App = ({ title, model }) => {
             </div>
           </div>
         </li >
-
       );
     });
   }
 
-
   const PlayerList = ({ players }) => {
-    // console.log("hola");
     return (
       <div>
         <ul>{getPlayersList(players)}</ul>
@@ -156,14 +149,11 @@ const App = ({ title, model }) => {
     </div>
   );
 
-
-
 }
 
 let model = new Model();
 let counter = 1;
 let render = () => {
-  //console.log('render times: ', counter++);
   ReactDOM.render(
     <App title="Scoreboard" model={model} />,
     document.getElementById('container')
