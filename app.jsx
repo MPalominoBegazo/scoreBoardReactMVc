@@ -38,14 +38,13 @@ class Model {
     );
     this.notify();
   }
+
   calculateTotalScore() {
-    //console.log("holi", this.totalScore);
+    this.totalScore = 0;
     for (let i = 0; i < this.players.length; i++) {
       this.totalScore += parseInt(this.players[i].score);
-      //console.log("Total score: ", this.totalScore);
     }
     return this.totalScore;
-
   }
 
   addScore(id) {
@@ -113,9 +112,9 @@ const App = ({ title, model }) => {
           <div className="player">
             <p className="player-name ">{player.name}</p>
             <div className="counter">
-              <button  onClick={() => model.dismissScore(index)} className=" counter-action decrement btn-danger">-</button>
+              <button onClick={() => model.dismissScore(index)} className=" counter-action decrement btn-danger">-</button>
               <p className="counter-score">{player.score}</p>
-              <button  onClick={() => model.addScore(index)} className="counter counter-action increment btn-success">+</button>
+              <button onClick={() => model.addScore(index)} className="counter counter-action increment btn-success">+</button>
             </div>
           </div>
         </li >
@@ -126,7 +125,7 @@ const App = ({ title, model }) => {
 
 
   const PlayerList = ({ players }) => {
-   // console.log("hola");
+    // console.log("hola");
     return (
       <div>
         <ul>{getPlayersList(players)}</ul>
